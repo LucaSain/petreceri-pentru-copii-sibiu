@@ -64,7 +64,7 @@ export default function Showcase() {
                 <div className="py-10 flex flex-wrap items-start justify-start max-w-sm mx-auto prose prose-sm">
                   <ul className="">
                     {item.data.map((data, i) => (
-                      <li>{data}</li>
+                      <li key={item.title + i}>{data}</li>
                     ))}
                   </ul>
                 </div>
