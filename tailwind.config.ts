@@ -77,7 +77,11 @@ const config = {
   daisyui: {
     themes: ["pastel"],
   },
-  plugins: [require("tailwindcss-animate"), require("daisyui")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("daisyui"),
+    require("@tailwindcss/typography"),
+  ],
 } satisfies Config;
 
 export default config;
