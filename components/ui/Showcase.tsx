@@ -150,7 +150,7 @@ const items = [
         <img className="object-cover w-full rounded-xl" src="modelaj.png" />
       </Skeleton>
     ),
-    className: "bg-info bg-opacity-50",
+    className: "bg-info bg-neutral text-neutral-content border-0",
     icon: <IconConfetti className="h-4 w-4 text-neutral-500" />,
     data: [],
   },
@@ -171,7 +171,7 @@ const items = [
   {
     title: "Arcade de baloane și alte decoruri",
     description: "75 lei metru liniar",
-    className: "col-span-1 bg-warning bg-opacity-50",
+    className: "col-span-1 bg-accent",
     text: "Spune-ne mai multe despre evenimentul tău și îți facem o ofertă personalizată",
     data: [],
     header: (
@@ -185,7 +185,8 @@ const items = [
     title: "Loc de joacă",
     description: "taxa fixa 300 lei + animator 100 lei / ora",
     text: "Peste 100 de jucării și jocuri pe care le instalăm în spațiul tău",
-    className: "col-span-1 bg-accent bg-opacity-50",
+    className:
+      "col-span-1 bg-gradient-to-br from-secondary via-secondary to-primary border-none",
     header: (
       <Skeleton>
         <img className="object-cover w-full rounded-xl" src="arcade.png" />

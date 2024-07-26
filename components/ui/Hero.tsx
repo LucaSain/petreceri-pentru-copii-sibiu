@@ -8,7 +8,7 @@ export default function Hero() {
         backgroundImage: "url(/bgtruetrue.png)",
       }}
     >
-      <div className="hero-overlay bg-transparent   bg-opacity-60"></div>
+      <div className="hero-overlay bg-transparent bg-opacity-60"></div>
       <div className=" hero-content text-neutral-content text-center relative z-[90]">
         <div className="max-w-md">
           <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
