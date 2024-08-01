@@ -2,6 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+.custom-shape-divider-bottom-1722501979 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1722501979 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 96px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1722501979 .shape-fill {
+  fill: #FFFFFF;
+}
+
+.custom-shape-divider-bottom-1722502342 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1722502342 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 66px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1722502342 .shape-fill {
+  fill: #6FABC7;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

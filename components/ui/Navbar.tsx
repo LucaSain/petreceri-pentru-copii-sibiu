@@ -1,4 +1,16 @@
+"use client";
+
 export default function Navbar() {
+  const links = [
+    "Mascote",
+    "Ateliere",
+    "Jocuri",
+    "Modelaj baloane",
+    "Pictura pe fata",
+    "Decoruri",
+    "Loc de joaca",
+  ];
+
   return (
     <div className="navbar z-[999] bg-base-100 shadow-xl fixed rounded-b-lg">
       <div className="navbar-start">
@@ -23,52 +35,52 @@ export default function Navbar() {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+            {links.map((link, i) => (
+              <li key={"nav-mobile" + i}>
+                <a
+                  onClick={() => {
+                    // @ts-ignore
+                    document
+                      .getElementById(i + "bento")
+                      .scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  {link}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <a className="btn btn-ghost text-xl">Petreceri copii</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <li>
-            <a>Item 1</a>
-          </li>
-          <li>
-            <details>
-              <summary>Parent</summary>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <a>Item 3</a>
-          </li>
+          {links.map((link, i) => (
+            <li key={"nav-desktop" + i}>
+              <a
+                onClick={async () => {
+                  // @ts-ignore
+                  const el = document.getElementById(i + "bento");
+                  // @ts-ignore
+                  el.scrollIntoView({ behavior: "smooth", block: "center" });
+                  // @ts-ignore
+                  const style = el.style;
+                  el?.style.setProperty("box-shadow", "0 0 30px 10px #ff0");
+                  // delete the border after 2 seconds
+                  setTimeout(() => {
+                    // @ts-ignore
+                    el.style = style;
+                  }, 1000);
+                }}
+              >
+                {link}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <a className="btn btn-primary">Contact</a>
       </div>
     </div>
   );

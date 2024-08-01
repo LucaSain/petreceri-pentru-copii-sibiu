@@ -11,14 +11,8 @@ import {
   IconConfetti,
   IconStars,
 } from "@tabler/icons-react";
-import {
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalFooter,
-  ModalTrigger,
-} from "./animated-modal";
-import { motion } from "framer-motion";
+import { Modal, ModalBody, ModalContent, ModalFooter } from "./animated-modal";
+
 import Image from "next/image";
 
 export default function Showcase() {
@@ -31,8 +25,9 @@ export default function Showcase() {
         {items.map((item, i) => (
           <Modal key={i}>
             <BentoGridItem
+              id={i + "bento"}
               title={item.title}
-              description={item.description}
+              description={"Click aici pentru detalii"}
               header={item.header}
               className={item.className}
               icon={item.icon}
@@ -43,39 +38,31 @@ export default function Showcase() {
                   {item.title} {"  "}🎉
                 </h4>
                 <div className="flex justify-center items-center">
-                  {[1, 4].map((image, idx) => (
-                    <div
-                      key={"images" + idx}
-                      style={{
-                        rotate: Math.random() * 20 - 10 + "deg",
-                      }}
-                      className="rounded-xl -mr-4 mt-4 p-1 bg-white dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-100 flex-shrink-0 overflow-hidden"
-                    >
-                      <Image
-                        src="/minnie.png"
-                        alt="bali images"
-                        width="500"
-                        height="500"
-                        className="rounded-lg h-20 w-20 md:h-40 md:w-40 object-cover flex-shrink-0"
-                      />
-                    </div>
-                  ))}
+                  {item.imagini !== 0 &&
+                    [1, 2, 3, 4].map((image, idx) => (
+                      <div
+                        key={"images" + idx}
+                        style={{
+                          rotate: Math.random() * 20 - 10 + "deg",
+                        }}
+                        className="rounded-xl -mr-4 mt-4 p-1  dark:border-neutral-700  border-neutral-100 flex-shrink-0 overflow-hidden"
+                      >
+                        <Image
+                          src={`/${item.base}${idx + 1} Medium.png`}
+                          alt="imagine"
+                          width="500"
+                          height="500"
+                          className="rounded-lg h-20 w-20 md:h-40 md:w-40 object-cover flex-shrink-0 "
+                        />
+                      </div>
+                    ))}
                 </div>
                 <div className="py-10 flex flex-wrap items-start justify-start max-w-sm mx-auto prose prose-sm">
-                  <ul className="">
-                    {item.data.map((data, i) => (
-                      <li key={item.title + i}>{data}</li>
-                    ))}
-                  </ul>
+                  <p> {item.text} </p>
                 </div>
               </ModalContent>
-              <ModalFooter className="gap-4">
-                <button className="px-2 py-1 bg-gray-200 text-black dark:bg-black dark:border-black dark:text-white border border-gray-300 rounded-md text-sm w-28">
-                  Cancel
-                </button>
-                <button className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28">
-                  Book Now
-                </button>
+              <ModalFooter className="flex justify-center pb-2 pt-2 bg-inherit">
+                <button className="btn btn-primary btn-block">Contact</button>
               </ModalFooter>
             </ModalBody>
           </Modal>
@@ -92,47 +79,51 @@ const Skeleton = ({ children }: { children?: React.ReactNode }) => (
 const items = [
   {
     title: "Mascotele Mikey si Minnie",
-    description: "450 lei - o ora | 200 lei - 30 min",
+    base: "mascote",
+    description: "",
     data: [],
     header: (
       <Skeleton>
         <img className="object-cover w-full rounded-xl" src="minnie.png" />
       </Skeleton>
     ),
-    text: "Mascotele intampina invitatii, fac poze, la cerere pot face o sesiune de dans cu playlistul nostru - o ora",
+    imagini: 4,
+    text: "Mascotele Minnie și Mickey Mouse sunt iconice și aduc instantaneu un sentiment de bucurie și entuziasm la orice ocazie. Fie că este vorba de petreceri de aniversare, evenimente școlare sau alte festivități, prezența acestor personaje îndrăgite asigură o atmosferă magică și distractivă. Mai ales acompaniate de musica si dans!",
     className: "col-span-2 bg-secondary",
     icon: <IconConfetti className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "Ateliere creative",
+    base: "ateliere",
     description: "300 lei / ora / 1 animator - max. 15 copii",
     header: (
       <Skeleton>
         <img className="object-cover w-full rounded-xl" src="ateliere.png" />
       </Skeleton>
     ),
-    text: "Copiii vor confecționa un obiect pe care îl vor lua acasă opțiuni atelier",
+    imagini: 4,
+    text: "Atelierele creative pentru copii sunt concepute pentru a oferi o experiență educativă și distractivă, în care cei mici pot să își exprime imaginația și să își dezvolte abilitățile artistice si motrice. Fiecare atelier este structurat pentru a încuraja explorarea, învățarea și dezvoltarea personală într-un mediu sigur și prietenos.",
     data: [
-      "atelier magneți de frigider",
-      "atelier de pictat pietre/inimi/forme de ipsos",
-      "atelier baloane uriașe de săpun (aici iau acasă doar amintiri)",
-      "atelier de măști",
-      "atelier de percutie",
-      "atelier de semn de carte",
-      "atelier de origami",
-      "atelier de pictat pe panza",
-      "atelier de facut bratari",
-      "atelier de papusi din ziar",
-      "atelier de teatru social",
+      // "atelier magneți de frigider",
+      // "atelier de pictat pietre/inimi/forme de ipsos",
+      // "atelier de măști",
+      // "... multe altele! (click pe detalii pentru mai multe opțiuni)",
+      // "atelier de origami",
+      // "atelier de pictat pe panza",
+      // "atelier de facut bratari",
+      // "atelier de papusi din ziar",
+      // "atelier de teatru social",
     ],
     className: "row-span-2 bg-primary",
     icon: <IconConfetti className="h-4 w-4 text-neutral-500" />,
   },
   {
     title: "Jocuri interactive",
+    base: "jocuri",
     description: "300 lei / ora / 1 animator",
     text: "Specialiștii noștri în jocuri stabilesc legături între copii, îi învăța lucrul în echipă și bunele maniere, creând spațiul pentru prietenie. Un animator gestionează perfect un număr de 15 copii. Putem conduce jocuri cu orice număr de copii. Chiar si peste 100.",
     className: "col-span-2 bg-accent",
+    imagini: 4,
     header: (
       <Skeleton>
         <img className="object-cover w-full rounded-xl" src="jocuri.png" />
@@ -143,22 +134,26 @@ const items = [
   },
   {
     title: "Modelaj de baloane",
+    base: "baloane",
     description: "300 lei / ora / 1 animator",
-    text: "Animatorul nostru va modela baloane în forme de animale, flori, personaje de desene animate, etc. pentru copii",
+    text: "Baloanele modelabile pot să transforme orice ocazie într-o experiență veselă și colorată. Prin creativitate și îndemânare, artiștii noștri realizează figurine spectaculoase din baloane, aducând zâmbete pe fețele celor mici.",
     header: (
       <Skeleton>
         <img className="object-cover w-full rounded-xl" src="modelaj.png" />
       </Skeleton>
     ),
+    imagini: 0,
     className: "bg-info bg-neutral text-neutral-content border-0",
     icon: <IconConfetti className="h-4 w-4 text-neutral-500" />,
     data: [],
   },
   {
     title: "Pictură pe față",
+    base: "facepaint",
     description: "300 lei / ora / 1 animator",
-    text: "Colaborăm cu absolvenții școlilor de artă și artiști în artele vizuale pentru a asigura o calitate extraordinară a picturii",
+    text: "Pictura pe față  a fost mereu indragita de copii! oferă o experiență captivantă și distractivă pentru cei mici, transformându-i în personajele lor preferate, fie că este vorba de supereroi, prințese, animale sau creaturi magice. Folosim numai vopsele de față de înaltă calitate, care sunt hipoalergenice și sigure pentru pielea delicată a copiilor. \n\n  Culorile se spală ușor cu apă și săpun.",
     data: [],
+    imagini: 4,
     header: (
       <Skeleton>
         <img className="object-cover w-full rounded-xl" src="picturafata.png" />
@@ -170,10 +165,12 @@ const items = [
   },
   {
     title: "Arcade de baloane și alte decoruri",
+    base: "arcade",
     description: "75 lei metru liniar",
     className: "col-span-1 bg-accent",
-    text: "Spune-ne mai multe despre evenimentul tău și îți facem o ofertă personalizată",
+    text: "Pentru cei ce isi doresc îmbogățirea spațiul de joacă va putem oferi decoruri tematice realizate din baloane. Spune-ne ce iti imaginezi si mainile noastre dibace pot da gata orice decor.",
     data: [],
+    imagini: 4,
     header: (
       <Skeleton>
         <img className="object-cover w-full rounded-xl" src="arcade.png" />
@@ -183,15 +180,17 @@ const items = [
   },
   {
     title: "Loc de joacă",
+    base: "locjoaca",
     description: "taxa fixa 300 lei + animator 100 lei / ora",
-    text: "Peste 100 de jucării și jocuri pe care le instalăm în spațiul tău",
+    text: "Kids Corner este un spațiu special conceput pentru a oferi copiilor un mediu sigur, distractiv și educativ în timpul evenimentelor, festivalurilor, centrelor comerciale, restaurantelor și altor locații publice. Acest colț dedicat copiilor este gândit pentru a-i ține ocupați și fericiți, oferind activități variate care să stimuleze creativitatea și dezvoltarea lor.",
     className:
       "col-span-1 bg-gradient-to-br from-secondary via-secondary to-primary border-none",
     header: (
       <Skeleton>
-        <img className="object-cover w-full rounded-xl" src="arcade.png" />
+        <img className="object-cover w-full rounded-xl" src="locjoaca.png" />
       </Skeleton>
     ),
+    imagini: 0,
     data: [
       "Zona de joacă acoperită cu covorașe de rafie de 6 metri pătrați",
       "3 corturi pentru copii",
@@ -203,15 +202,11 @@ const items = [
   },
   {
     title: "Alte servicii prin parteneri pentru evenimentul tau",
+    base: "parteneri",
     description: "Iti trimitem o oferta separata daca doresti",
     className: "bg-secondary",
-    text: "Pentru a face evenimentul tău mai special, colaborăm cu parteneri de încredere care oferă servicii de calitate. În funcție de tematica evenimentului tău, îți putem oferi:",
-    data: [
-      "Show de magie - Eugenius Magic din Venezuela",
-      "Show de magie - Magicianul Mihai din Sibiu",
-      "Tobogane gonflabile: 3.5 - 4.5 - 6 metri",
-      "Castele gonflabile",
-    ],
+    text: "Pentru a face evenimentul tău mai special, colaborăm cu parteneri de încredere care oferă servicii de calitate. În funcție de tematica evenimentului tău, îți putem oferi: show-uri de magie, tobogane gonflabile, castele gonflabile.",
+    imagini: 0,
     header: (
       <Skeleton>
         <IconConfetti className="w-full h-full text-secondary" />
