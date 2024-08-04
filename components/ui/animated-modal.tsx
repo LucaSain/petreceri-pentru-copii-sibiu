@@ -162,6 +162,7 @@ export const ModalFooter = ({
   children: ReactNode;
   className?: string;
 }) => {
+  const { setOpen } = useModal();
   return (
     <div
       className={cn(
@@ -169,6 +170,14 @@ export const ModalFooter = ({
         className
       )}
     >
+      <button
+        onClick={() => {
+          setOpen(false);
+        }}
+        className="btn btn-error"
+      >
+        Inchide
+      </button>
       {children}
     </div>
   );

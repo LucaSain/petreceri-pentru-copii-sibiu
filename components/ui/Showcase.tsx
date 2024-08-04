@@ -62,8 +62,8 @@ export default function Showcase() {
                   <p> {item.text} </p>
                 </div>
               </ModalContent>
-              <ModalFooter className="flex justify-center pb-2 pt-2 bg-inherit">
-                <Link href="/contact" className="btn btn-primary btn-block">
+              <ModalFooter className="flex justify-around pb-2 pt-2 bg-inherit gap-3">
+                <Link href="/contact" className="btn btn-primary">
                   Contact
                 </Link>
               </ModalFooter>
