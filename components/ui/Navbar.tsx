@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { redirect, usePathname } from "next/navigation";
 export default function Navbar() {
   const links = [
     "Mascote",
@@ -10,6 +12,7 @@ export default function Navbar() {
     "Decoruri",
     "Loc de joaca",
   ];
+  const path = usePathname();
 
   return (
     <div className="navbar z-[999] bg-base-100 shadow-xl fixed rounded-b-lg">
@@ -39,6 +42,7 @@ export default function Navbar() {
               <li key={"nav-mobile" + i}>
                 <a
                   onClick={() => {
+                    if (path === "/contact") window.location.href = "/";
                     // @ts-ignore
                     document
                       .getElementById(i + "bento")
@@ -51,7 +55,9 @@ export default function Navbar() {
             ))}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">Petreceri copii</a>
+        <Link href="/" className="btn btn-ghost text-xl">
+          Petreceri copii
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -59,6 +65,7 @@ export default function Navbar() {
             <li key={"nav-desktop" + i}>
               <a
                 onClick={async () => {
+                  if (path === "/contact") window.location.href = "/";
                   // @ts-ignore
                   const el = document.getElementById(i + "bento");
                   // @ts-ignore
@@ -80,7 +87,9 @@ export default function Navbar() {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn btn-primary">Contact</a>
+        <Link href="/contact" className="btn btn-primary">
+          Contact
+        </Link>
       </div>
     </div>
   );

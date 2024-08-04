@@ -14,6 +14,7 @@ import {
 import { Modal, ModalBody, ModalContent, ModalFooter } from "./animated-modal";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Showcase() {
   return (
@@ -21,7 +22,7 @@ export default function Showcase() {
       <h1 className="text-center text-4xl font-semibold py-10 z-[10] relative">
         Serviciile noastre
       </h1>
-      <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem] z-[10] relative flex flex-col gap-4 justify-center px-4 sm:grid">
+      <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem] z-[10] relative flex flex-col gap-4 justify-center px-4 sm:grid pb-10 sm:pb-20">
         {items.map((item, i) => (
           <Modal key={i}>
             <BentoGridItem
@@ -62,7 +63,9 @@ export default function Showcase() {
                 </div>
               </ModalContent>
               <ModalFooter className="flex justify-center pb-2 pt-2 bg-inherit">
-                <button className="btn btn-primary btn-block">Contact</button>
+                <Link href="/contact" className="btn btn-primary btn-block">
+                  Contact
+                </Link>
               </ModalFooter>
             </ModalBody>
           </Modal>

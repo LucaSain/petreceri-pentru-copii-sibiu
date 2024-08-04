@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function Hero() {
   return (
     <div
@@ -16,7 +17,9 @@ export default function Hero() {
             conturat de-a lungul timpului ca răspuns la nevoile copiilor
             parintilor de a oferi entertainment pentru micutii lor.
           </p>
-          <button className="btn btn-primary">Contact</button>
+          <Link href="/contact" className="btn btn-primary">
+            Contact
+          </Link>
         </div>
       </div>
       <div className="custom-shape-divider-bottom-1722501979">
