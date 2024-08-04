@@ -49,7 +49,7 @@ export default function Showcase() {
                         className="rounded-xl -mr-4 mt-4 p-1  dark:border-neutral-700  border-neutral-100 flex-shrink-0 overflow-hidden"
                       >
                         <Image
-                          src={`/${item.base}${idx + 1} Medium.png`}
+                          src={`/${item.base}${idx + 1} Medium.jpeg`}
                           alt="imagine"
                           width="500"
                           height="500"
@@ -87,7 +87,10 @@ const items = [
     data: [],
     header: (
       <Skeleton>
-        <img className="object-cover w-full rounded-xl" src="minnie.png" />
+        <img
+          className="object-cover w-full rounded-xl"
+          src="minnie Large.jpeg"
+        />
       </Skeleton>
     ),
     imagini: 4,
@@ -101,7 +104,10 @@ const items = [
     description: "300 lei / ora / 1 animator - max. 15 copii",
     header: (
       <Skeleton>
-        <img className="object-cover w-full rounded-xl" src="ateliere.png" />
+        <img
+          className="object-cover w-full rounded-xl"
+          src="ateliere Large.jpeg"
+        />
       </Skeleton>
     ),
     imagini: 4,
@@ -129,7 +135,10 @@ const items = [
     imagini: 4,
     header: (
       <Skeleton>
-        <img className="object-cover w-full rounded-xl" src="jocuri.png" />
+        <img
+          className="object-cover w-full rounded-xl"
+          src="jocuri Large.jpeg"
+        />
       </Skeleton>
     ),
     icon: <IconConfetti className="h-4 w-4 text-neutral-500" />,
@@ -142,7 +151,10 @@ const items = [
     text: "Baloanele modelabile pot să transforme orice ocazie într-o experiență veselă și colorată. Prin creativitate și îndemânare, artiștii noștri realizează figurine spectaculoase din baloane, aducând zâmbete pe fețele celor mici.",
     header: (
       <Skeleton>
-        <img className="object-cover w-full rounded-xl" src="modelaj.png" />
+        <img
+          className="object-cover w-full rounded-xl"
+          src="modelaj Large.jpeg"
+        />
       </Skeleton>
     ),
     imagini: 0,
@@ -159,7 +171,10 @@ const items = [
     imagini: 4,
     header: (
       <Skeleton>
-        <img className="object-cover w-full rounded-xl" src="picturafata.png" />
+        <img
+          className="object-cover w-full rounded-xl"
+          src="picturafata Large.jpeg"
+        />
       </Skeleton>
     ),
 
@@ -176,7 +191,10 @@ const items = [
     imagini: 4,
     header: (
       <Skeleton>
-        <img className="object-cover w-full rounded-xl" src="arcade.png" />
+        <img
+          className="object-cover w-full rounded-xl"
+          src="arcade Large.jpeg"
+        />
       </Skeleton>
     ),
     icon: <IconConfetti className="h-4 w-4 text-neutral-500" />,
@@ -190,7 +208,10 @@ const items = [
       "col-span-1 bg-gradient-to-br from-secondary via-secondary to-primary border-none",
     header: (
       <Skeleton>
-        <img className="object-cover w-full rounded-xl" src="locjoaca.png" />
+        <img
+          className="object-cover w-full rounded-xl"
+          src="locjoaca Large.jpeg"
+        />
       </Skeleton>
     ),
     imagini: 0,

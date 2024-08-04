@@ -10,7 +10,9 @@ export default function Hero() {
       <div className="hero-overlay bg-opacity-80"></div>
       <div className="hero-content text-neutral-content text-center">
         <div className="max-w-md">
-          <h1 className="mb-5 text-5xl font-bold  text-[#3a3a3a]">Salutare!</h1>
+          <h1 className="mb-5 text-5xl font-bold text-[#3a3a3a]">
+            Petreceri pentru copii!
+          </h1>
           <p className="mb-5 font-[#3a3a3a]">
             Petreceri pentru copii Sibiu organizează evenimente pentru copii de
             peste 8 ani in orașul Sibiu si vecinătăți. Activitatile noastre s-au
