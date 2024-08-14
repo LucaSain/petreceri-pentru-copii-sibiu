@@ -85,7 +85,7 @@ const items = [
       </Skeleton>
     ),
     imagini: 4,
-    text: "Mascotele Minnie și Mickey Mouse sunt iconice și aduc instantaneu un sentiment de bucurie și entuziasm la orice ocazie. Fie că este vorba de petreceri de aniversare, evenimente școlare sau alte festivități, prezența acestor personaje îndrăgite asigură o atmosferă magică și distractivă. Mai ales acompaniate de musica si dans!",
+    text: "Mascotele Minnie și Mickey Mouse sunt iconice și aduc instantaneu un sentiment de bucurie și entuziasm la orice ocazie. Fie că este vorba de petreceri aniversare, evenimente școlare sau alte festivități, prezența acestor personaje îndrăgite asigură o atmosferă magică și distractivă. Mai ales acompaniate de musica si dans!",
     className: "col-span-2 bg-secondary",
     icon: <IconConfetti className="h-4 w-4 text-neutral-500" />,
   },
@@ -157,7 +157,7 @@ const items = [
     title: "Pictură pe față",
     base: "facepaint",
     description: "300 lei / ora / 1 animator",
-    text: "Pictura pe față  a fost mereu indragita de copii! oferă o experiență captivantă și distractivă pentru cei mici, transformându-i în personajele lor preferate, fie că este vorba de supereroi, prințese, animale sau creaturi magice. Folosim numai vopsele de față de înaltă calitate, care sunt hipoalergenice și sigure pentru pielea delicată a copiilor. \n\n  Culorile se spală ușor cu apă și săpun.",
+    text: "Pictura pe față a fost mereu indragita de copii! oferă o experiență captivantă și distractivă pentru cei mici, transformându-i în personajele lor preferate, fie că este vorba de supereroi, prințese, animale sau creaturi magice. Folosim numai vopsele de față de înaltă calitate, care sunt hipoalergenice și sigure pentru pielea delicată a copiilor. Folosim culori speciale hipoalergice  pentru fata si corp aprobate de FDA. Culorile se spala usor cu apa si sapun sau servetele demachiante",
     data: [],
     imagini: 4,
     header: (
