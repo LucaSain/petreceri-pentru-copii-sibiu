@@ -12,7 +12,7 @@ import {
   IconStars,
 } from "@tabler/icons-react";
 import { Modal, ModalBody, ModalContent, ModalFooter } from "./animated-modal";
-
+import EnlargingImage from "./enlargingImage";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -41,21 +41,12 @@ export default function Showcase() {
                 <div className="flex justify-center items-center">
                   {item.imagini !== 0 &&
                     [1, 2, 3, 4].map((image, idx) => (
-                      <div
-                        key={"images" + idx}
-                        style={{
-                          rotate: Math.random() * 20 - 10 + "deg",
-                        }}
-                        className="rounded-xl -mr-4 mt-4 p-1  dark:border-neutral-700  border-neutral-100 flex-shrink-0 overflow-hidden"
-                      >
-                        <Image
-                          src={`/${item.base}${idx + 1} Medium.jpeg`}
-                          alt="imagine"
-                          width="500"
-                          height="500"
-                          className="rounded-lg h-20 w-20 md:h-40 md:w-40 object-cover flex-shrink-0 "
-                        />
-                      </div>
+                      <EnlargingImage
+                        id={item.title + idx}
+                        key={item.title + idx}
+                        src={`/${item.base}${idx + 1} Medium.jpeg`}
+                        alt="image"
+                      />
                     ))}
                 </div>
                 <div className="py-10 flex flex-wrap items-start justify-start max-w-sm mx-auto prose prose-sm">

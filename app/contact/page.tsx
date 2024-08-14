@@ -10,7 +10,7 @@ export default function Rezerva() {
     email: string;
     mesaj: string;
   }
-  const names = ["nume", "prenume", "telefon", "email", "mesaj"];
+
   const formElements = [
     <input
       key="nume"
